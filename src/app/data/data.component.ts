@@ -1,4 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { filter, map, Observable, Subscription, take } from 'rxjs';
 import { SharedService } from '../shared.service';
 
@@ -11,7 +12,7 @@ export class DataComponent implements OnInit, OnDestroy {
   _getObse!: Subscription;
   dataList: any;
 
-  constructor(private service: SharedService) {}
+  constructor(private service: SharedService, private router: Router) {}
 
   ngOnInit() {
     this.getPassengerDetails();
@@ -35,7 +36,7 @@ export class DataComponent implements OnInit, OnDestroy {
 
   getAirlines(e:any) {
     console.log(e.target.innerHTML);
-    console.log("clicked"+ e.target);
+    this.router.navigate(['/airline']);
   }
 
   ngOnDestroy() {
