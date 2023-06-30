@@ -14,20 +14,16 @@ export class DataComponent implements OnInit, OnDestroy {
   constructor(private service: SharedService) {}
 
   ngOnInit() {
-    this.getAirlineById();
+    this.getPassengerDetails();
   }
 
-  getAirlineById() {
-
-    for(let i=1; i<20; i++) {
-
-    }
-
+  getPassengerDetails() {
     this._getObse = this.service
-    .getAirlineById(3)
+    .getPassengerDetails()
     .subscribe({
       next: (res) => {
-        this.dataList= Object.assign(new Array<any>, res)
+        console.log(res);
+        this.dataList= Object.assign(new Array<any>, res.data)
 
         console.log(this.dataList);
       },
