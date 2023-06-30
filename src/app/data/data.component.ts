@@ -31,8 +31,11 @@ export class DataComponent implements OnInit, OnDestroy {
         console.log(err);
       },
     });
+  }
 
-
+  getAirlines(e:any) {
+    console.log(e.target.innerHTML);
+    console.log("clicked"+ e.target);
   }
 
   ngOnDestroy() {

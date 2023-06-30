@@ -1,26 +1,30 @@
 <div class="container">
-<div class="row">
-  <table class="table">
-    <thead>
-      <tr>
-        <th>Passenger Name</th>
-        <th>Total Trips</th>
-        <th>Airline ID</th>
-        <th>Airline Country</th>
-        <th>Airline Logo</th>
-        <th>Airline Est.</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let data of dataList">
-        <td>{{ data.name }}</td>
-        <td>{{ data.trips }}</td>
-        <td>{{ data.airline[0].id }}</td>
-        <td>{{ data.airline[0].country }}</td>
-        <td><img [src]="data.airline[0].logo" alt="Pic" /></td>
-        <td>{{ data.airline[0].established }}</td>
-      </tr>
-    </tbody>
-  </table>
-</div>
+  <div class="row">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Passenger Name</th>
+          <th>Total Trips</th>
+          <th>Airline ID</th>
+          <th>Airline Country</th>
+          <th>Airline Logo</th>
+          <th>Airline Est.</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let data of dataList">
+          <td>{{ data.name }}</td>
+          <td>{{ data.trips }}</td>
+          <td (click)="getAirlines($event)">
+            <a style="cursor: pointer" class="hyperlink">{{
+              data.airline[0].id
+            }}</a>
+          </td>
+          <td>{{ data.airline[0].country }}</td>
+          <td><img [src]="data.airline[0].logo" alt="Pic" /></td>
+          <td>{{ data.airline[0].established }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>
