@@ -1,0 +1,22 @@
+<div class="row" style="margin-top:1em">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Country</th>
+        <th>Logo</th>
+        <th>Est.</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let data of dataList">
+        <td>{{ data.id }}</td>
+        <td>{{ data.name }}</td>
+        <td>{{ data.country }}</td>
+        <td><img [src]="data.logo" alt="Pic" /></td>
+        <td>{{ data.established }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
