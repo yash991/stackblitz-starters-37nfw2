@@ -5,24 +5,35 @@ import { AppComponent } from './app.component';
 import { DataComponent } from './data/data.component';
 import { SharedService } from './shared.service';
 import { HttpClientModule } from '@angular/common/http';
-import { Routes } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 import { AirlineComponent } from './airline/airline.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: AppComponent,
+    redirectTo: 'data',
+    pathMatch: 'full',
   },
   {
-    path: '/airline',
+    path: 'data',
+    component: DataComponent,
+  },
+  {
+    path: 'airline/:id',
     component: AirlineComponent,
   },
 ];
 
 @NgModule({
-  imports: [CommonModule, BrowserModule, HttpClientModule],
+  imports: [
+    CommonModule,
+    BrowserModule,
+    HttpClientModule,
+    RouterModule.forRoot(routes),
+  ],
   providers: [],
   declarations: [AppComponent, DataComponent, AirlineComponent],
   bootstrap: [AppComponent],
+  exports: [RouterModule],
 })
 export class AppModule {}

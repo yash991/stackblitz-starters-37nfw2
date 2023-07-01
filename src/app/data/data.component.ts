@@ -34,11 +34,6 @@ export class DataComponent implements OnInit, OnDestroy {
     });
   }
 
-  getAirlines(e:any) {
-    console.log(e.target.innerHTML);
-    this.router.navigate(['/airline']);
-  }
-
   ngOnDestroy() {
     if (this._getObse) {
       this._getObse.unsubscribe();

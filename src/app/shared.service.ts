@@ -7,7 +7,7 @@ import { map, Observable, take } from 'rxjs';
 })
 export class SharedService {
   url1 = 'https://api.instantwebtools.net/v1/passenger?page=0&size=20';
-  url2 = 'https://api.instantwebtools.net/v1/airlines/:id';
+  url2 = 'https://api.instantwebtools.net/v1/airlines/';
   headers = new HttpHeaders().set('Content-Type', 'application/json');
 
   constructor(private _http: HttpClient) {}
@@ -16,7 +16,7 @@ export class SharedService {
     return this._http.get<any>(this.url1, { headers: this.headers });
   }
 
-  getAirlineById(): Observable<any> {
-    return this._http.get<any>(this.url2, { headers: this.headers });
+  getAirlineById(id: number): Observable<any> {
+    return this._http.get<any>(this.url2+id, { headers: this.headers });
   }
 }
