@@ -1,5 +1,11 @@
 <h2 style="text-align:center">Passenger Details</h2>
-<div class="container">
+
+<div *ngIf="dataList == null" class="text-center">
+  <div class="spinner-border" role="status"></div>
+  <span class="sr-only">Loading...</span>
+</div>
+
+<div *ngIf="dataList != null" class="container">
   <div class="row">
     <table class="table">
       <thead>

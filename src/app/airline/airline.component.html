@@ -8,11 +8,23 @@
   ></div>
 
   <div *ngIf="airline != null">
-    <h1>{{ airline?.name }}</h1>
-    <h5>Country: {{ airline?.country }}</h5>
-    <h5>head_quaters: {{ airline?.head_quaters }}</h5>
-    <h5>established: {{ airline?.established }}</h5>
-    <h5>slogan: {{ airline?.slogan }}</h5>
-    <h5>website: {{ airline?.website }}</h5>
+    <div *ngIf="airline.name != null">
+      <h5 *ngIf="airline?.logo != null">
+        <img
+          [src]="airline.logo"
+          onerror="this.style.display = 'none';"
+          alt="pic"
+        />
+      </h5>
+      <h1>{{ airline?.name }}</h1>
+      <h5>Country: {{ airline?.country }}</h5>
+      <h5>head_quaters: {{ airline?.head_quaters }}</h5>
+      <h5>established: {{ airline?.established }}</h5>
+      <h5>slogan: {{ airline?.slogan }}</h5>
+      <h5>website: {{ airline?.website }}</h5>
+    </div>
+    <div *ngIf="airline.name == null">
+      Airline id with {{ id }} is not available.
+    </div>
   </div>
 </div>
