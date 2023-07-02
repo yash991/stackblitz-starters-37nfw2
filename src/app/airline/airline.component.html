@@ -1,4 +1,4 @@
-<a routerLink="" routerLinkActive="inactive" (click)="goBack()">Back</a>
+<a routerLink="" routerLinkActive="inactive" (click)="goBack()">Home</a>
 
 <div class="container">
   <div
@@ -11,6 +11,7 @@
     <div *ngIf="airline.name != null">
       <h5 *ngIf="airline?.logo != null">
         <img
+          class="img-thumbnail"
           [src]="airline.logo"
           onerror="this.style.display = 'none';"
           alt="pic"

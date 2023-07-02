@@ -1,4 +1,20 @@
-<h2 style="text-align:center">Passenger Details</h2>
+<div style="margin-top:1em" class="container">
+  <div class="row">
+    <div class="col-md-8">
+      <h2 style="text-align:center">Passenger Details</h2>
+    </div>
+
+    <div class="col-md-4">
+      <button
+        type="button"
+        class="btn btn-outline-primary"
+        (click)="createPassenger()"
+      >
+        Create New Passenger
+      </button>
+    </div>
+  </div>
+</div>
 
 <div *ngIf="dataList == null" class="text-center">
   <div class="spinner-border" role="status"></div>
@@ -14,8 +30,8 @@
           <th>Total Trips</th>
           <th>Airline ID</th>
           <th>Airline Country</th>
-          <th>Airline Logo</th>
           <th>Airline Est.</th>
+          <th>Airline Logo</th>
         </tr>
       </thead>
       <tbody>
@@ -30,8 +46,14 @@
             >
           </td>
           <td>{{ data?.airline[0]?.country }}</td>
-          <td><img [src]="data?.airline[0]?.logo" alt="pic" /></td>
           <td>{{ data?.airline[0]?.established }}</td>
+          <td>
+            <img
+              [src]="data?.airline[0]?.logo"
+              alt="pic"
+              class="img-thumbnail"
+            />
+          </td>
         </tr>
       </tbody>
     </table>

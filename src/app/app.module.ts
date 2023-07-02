@@ -7,6 +7,8 @@ import { SharedService } from './shared.service';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule, Routes } from '@angular/router';
 import { AirlineComponent } from './airline/airline.component';
+import { PassengerComponent } from './passenger/passenger.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 const routes: Routes = [
   {
@@ -22,6 +24,10 @@ const routes: Routes = [
     path: 'airline/:id',
     component: AirlineComponent,
   },
+  {
+    path: 'passenger',
+    component: PassengerComponent,
+  }
 ];
 
 @NgModule({
@@ -29,10 +35,11 @@ const routes: Routes = [
     CommonModule,
     BrowserModule,
     HttpClientModule,
+    ReactiveFormsModule,
     RouterModule.forRoot(routes),
   ],
   providers: [],
-  declarations: [AppComponent, DataComponent, AirlineComponent],
+  declarations: [AppComponent, DataComponent, AirlineComponent, PassengerComponent],
   bootstrap: [AppComponent],
   exports: [RouterModule],
 })

@@ -34,6 +34,10 @@ export class DataComponent implements OnInit, OnDestroy {
     });
   }
 
+  createPassenger() { 
+    this.router.navigateByUrl('/passenger');
+  }
+
   ngOnDestroy() {
     if (this._getObse) {
       this._getObse.unsubscribe();
