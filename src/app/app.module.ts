@@ -9,6 +9,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AirlineComponent } from './airline/airline.component';
 import { PassengerComponent } from './passenger/passenger.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { TestComponent } from './test/test.component';
 
 const routes: Routes = [
   {
@@ -27,6 +28,10 @@ const routes: Routes = [
   {
     path: 'passenger',
     component: PassengerComponent,
+  },
+  {
+    path: 'test',
+    component: TestComponent,
   }
 ];
 

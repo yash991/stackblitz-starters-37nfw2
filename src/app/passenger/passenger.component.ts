@@ -44,6 +44,9 @@ export class PassengerComponent implements OnInit, OnDestroy {
   }
 
   createPassenger() {
+    console.log(this.f?.airlineId?.value.toFixed(2));
+
+
     this.res = null;
     this.data = new PassengerData();
 
@@ -56,8 +59,8 @@ export class PassengerComponent implements OnInit, OnDestroy {
       this.data.airline == null ||
       this.data.trips == null
     ) {
+      this.form.markAllAsTouched();
       this.showpopup = true;
-      
     } else {
       this.showpopup = false;
       this._getObse = this.service.createPassenger(this.data).subscribe({ 
